@@ -8,6 +8,7 @@ public func allTests() -> [XCTestCaseEntry] {
         testCase(AddressTests.allTests),
         testCase(LineItemTests.allCases),
         testCase(CalculateRequestTests.allCases),
+        testCase(JurisdictionsTests.allCases),
     ]
 }
 #endif
