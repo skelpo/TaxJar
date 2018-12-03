@@ -4,7 +4,7 @@ import Vapor
 extension Tax {
     
     /// Jurisdiction names for an order.
-    public struct Jurisdictions: Content, Encodable {
+    public struct Jurisdictions: Content, Equatable {
         
         /// Two-letter ISO country code for given location.
         ///
