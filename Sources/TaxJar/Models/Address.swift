@@ -32,6 +32,7 @@ public struct Address: Content, Equatable {
     ///   - city: City name.
     ///   - street: Street address.
     public init(id: String? = nil, country: Country, zip: String?, state: Province?, city: String?, street: String?) {
+        self.id = id
         self.country = country
         self.zip = zip
         self.state = state
