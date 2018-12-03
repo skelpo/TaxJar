@@ -7,9 +7,11 @@ let package = Package(
     products: [
         .library(name: "TaxJar", targets: ["TaxJar"]),
     ],
-    dependencies: [],
+    dependencies: [
+        .package(url: "https://github.com/vapor/vapor.git", from: "3.1.0")
+    ],
     targets: [
-        .target(name: "TaxJar", dependencies: []),
+        .target(name: "TaxJar", dependencies: ["Vapor"]),
         .testTarget(name: "TaxJarTests", dependencies: ["TaxJar"]),
     ]
 )
