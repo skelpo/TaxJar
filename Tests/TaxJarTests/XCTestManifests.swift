@@ -6,6 +6,7 @@ public func allTests() -> [XCTestCaseEntry] {
         testCase(TaxJarTests.allTests),
         testCase(EnvironmentTests.allTests),
         testCase(AddressTests.allTests),
+        testCase(LineItemTests.allCases),
     ]
 }
 #endif
