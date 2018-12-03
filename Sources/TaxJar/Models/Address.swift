@@ -11,16 +11,16 @@ public struct Address: Content, Equatable {
     public var country: Country
     
     /// Postal code (5-Digit ZIP or ZIP+4).
-    public var zip: String
+    public var zip: String?
     
     /// Two-letter ISO state code.
-    public var state: Province
+    public var state: Province?
     
     /// City name.
-    public var city: String
+    public var city: String?
     
     /// Street address.
-    public var street: String
+    public var street: String?
     
     /// Creates a new `Address` instance.
     ///
@@ -31,7 +31,7 @@ public struct Address: Content, Equatable {
     ///   - state: Two-letter ISO state code.
     ///   - city: City name.
     ///   - street: Street address.
-    public init(id: String? = nil, country: Country, zip: String, state: Province, city: String, street: String) {
+    public init(id: String? = nil, country: Country, zip: String?, state: Province?, city: String?, street: String?) {
         self.country = country
         self.zip = zip
         self.state = state
