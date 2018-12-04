@@ -3,6 +3,8 @@ import XCTest
 #if !os(macOS)
 public func allTests() -> [XCTestCaseEntry] {
     return [
+        
+        // MARK: - Models
         testCase(TaxJarTests.allTests),
         testCase(EnvironmentTests.allTests),
         testCase(AddressTests.allTests),
@@ -11,6 +13,9 @@ public func allTests() -> [XCTestCaseEntry] {
         testCase(JurisdictionsTests.allCases),
         testCase(BreakdownTests.allCases),
         testCase(TaxTests.allCases),
+        
+        // MARK: - Controllers
+        testCase(SaleTaxTests.allCases)
     ]
 }
 #endif
