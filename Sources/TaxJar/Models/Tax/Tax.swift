@@ -24,7 +24,7 @@ public struct Tax: Content, Equatable {
     public var freightTaxable: Bool
     
     /// Origin-based or destination-based sales tax collection.
-    public var source: String
+    public var source: String?
     
     /// Jurisdiction names for the order.
     public var jurisdictions: Jurisdictions
@@ -55,7 +55,7 @@ public struct Tax: Content, Equatable {
         rate: Decimal,
         hasNexus: Bool,
         freightTaxable: Bool,
-        source: String,
+        source: String?,
         jurisdictions: Jurisdictions,
         breakdown: Breakdown
     ) {
