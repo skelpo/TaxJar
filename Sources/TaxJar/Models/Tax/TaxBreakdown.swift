@@ -90,7 +90,7 @@ extension Tax {
             specialDistrictTaxableAmount: Decimal?,
             specialTaxRate: Decimal?,
             specialDistrictTaxCollectable: Decimal?,
-            lineItems: [LineItem]
+            items: [LineItem]
         ) {
             self.taxableAmount = taxableAmount
             self.taxCollectable = taxCollectable
@@ -107,7 +107,7 @@ extension Tax {
             self.specialDistrictTaxableAmount = specialDistrictTaxableAmount
             self.specialTaxRate = specialTaxRate
             self.specialDistrictTaxCollectable = specialDistrictTaxCollectable
-            self.items = lineItems
+            self.items = items
         }
         
         enum CodingKeys: String, CodingKey {
