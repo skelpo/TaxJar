@@ -34,7 +34,7 @@ extension Tax {
         ///   - state: Postal abbreviated state name for given location.
         ///   - county: County name for given location.
         ///   - city: City name for given location.
-        public init(country: Country, state: Province?, county: String, city: String) {
+        public init(country: Country, state: Province?, county: String?, city: String?) {
             self.country = country
             self.state = state
             self.county = county
