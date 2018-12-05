@@ -16,7 +16,12 @@ public final class SalesTax: ServiceType {
             let key = try self.container.make(Configuration.self).key
             
             let body = try JSONEncoder().encode(order)
-            let http = HTTPRequest(method: .POST, url: "https://api.taxjar.com/v2/taxes", headers: ["Authorization": "Bearer " + key], body: body)
+            let http = HTTPRequest(
+                method: .POST,
+                url: Environment.production.domain + "/v2/taxes",
+                headers: ["Authorization": "Bearer " + key, "Content-Type": "application/json"],
+                body: body
+            )
             let request = Request(http: http, using: self.container)
             
             let response = try self.container.client().send(request)
