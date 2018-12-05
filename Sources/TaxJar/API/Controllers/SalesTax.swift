@@ -25,7 +25,7 @@ public final class SalesTax: ServiceType {
             let request = Request(http: http, using: self.container)
             
             let response = try self.container.client().send(request)
-            return response.flatMap { try $0.content.decode(Tax.self) }
+            return response.flatMap { return $0.content.get(Tax.self, at: "tax") }
             
         } catch let error {
             return self.container.future(error: error)
