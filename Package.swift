@@ -8,11 +8,12 @@ let package = Package(
         .library(name: "TaxJar", targets: ["TaxJar"]),
     ],
     dependencies: [
+        .package(url: "https://github.com/skelpo/TaxCalculator.git", from: "0.1.0"),
         .package(url: "https://github.com/skelpo/Countries.git", from: "0.9.0"),
         .package(url: "https://github.com/vapor/vapor.git", from: "3.1.0")
     ],
     targets: [
-        .target(name: "TaxJar", dependencies: ["Vapor", "Countries"]),
+        .target(name: "TaxJar", dependencies: ["Vapor", "Countries", "TaxCalculator"]),
         .testTarget(name: "TaxJarTests", dependencies: ["TaxJar"]),
     ]
 )
