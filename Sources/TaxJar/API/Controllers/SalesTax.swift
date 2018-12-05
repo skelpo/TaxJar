@@ -1,3 +1,4 @@
+import TaxCalculator
 import Vapor
 
 public final class SalesTax: ServiceType {
@@ -30,5 +31,11 @@ public final class SalesTax: ServiceType {
         } catch let error {
             return self.container.future(error: error)
         }
+    }
+}
+
+extension SalesTax: TaxCalculator {
+    public func tax(for input: Tax.CalculateRequest) -> EventLoopFuture<Decimal> {
+        return self.tax(for: input).map { (tax: Tax) in tax.rate }
     }
 }
